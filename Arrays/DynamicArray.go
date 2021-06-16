@@ -1,9 +1,7 @@
 package Arrays
 
-import (
-	"errors"
-	"fmt"
-)
+import Exception "github.com/Adetunjii/data_structures/Exceptions"
+
 
 type DynamicArray struct {
 	capacity uint
@@ -17,14 +15,12 @@ func (d *DynamicArray) Size() uint {
 	return d.len
 }
 
-func IndexOutOfBoundsException() error{
-	return errors.New("Index out of bounds")
-}
+
 
 func (d *DynamicArray) Get(index uint) (interface{}, error) {
 
-	if(index > d.len || index < 0) {
-		return nil, IndexOutOfBoundsException();
+	if(index > d.len) {
+		return nil, Exception.IndexOutOfBoundsException();
 	}
 	
 	return d.arr[index], nil
@@ -49,39 +45,48 @@ func (d *DynamicArray) Add(element interface{}) {
 			//bit-shift the capacity i.e (capacity x 2^1)
 			d.capacity = d.capacity << 1
 		}
-
 		newArray := make([]interface{}, d.capacity)
-		fmt.Println(newArray)
-		copy(newArray, d.arr)
+		
+		if d.len > 0 {
+			copy(newArray, d.arr);
+		}
 		
 		d.arr = newArray
 		d.arr[d.len] = element
-		d.len++
 	}
 	d.arr[d.len] = element;  
-	
+	d.len++
 }
 
 
-func (d *DynamicArray) RemoveAt(index uint) error {
+func (d *DynamicArray) RemoveAt(index uint) (interface{}, error) {
 	if(index >= d.len) {
-		return  IndexOutOfBoundsException()
+		return  nil, Exception.IndexOutOfBoundsException()
 	}
 
-	//get the data
-	// data := d.arr[index]
+	data := d.arr[index]
 
+	copy(d.arr[index: ], d.arr[index + 1 : ])
+	newArray := make([]interface{}, d.capacity - 1)
+	copy(newArray, d.arr);
 
-
-	// copy the element from the next index to the end 
-	// to the index we're removing from 
-	copy(d.arr[index: ], d.arr[index +1: d.len])
-
-	fmt.Println(d.arr)
-
-	return nil;
+	
+	return data, nil;
 }
 
-func (d *DynamicArray) Print() {
-	fmt.Print(d.arr)
+func (d * DynamicArray) IndexOf(object interface{}) int {
+	for index, item := range d.arr {
+		if item == object {
+			return index;
+		}
+	}
+	return -1
+} 
+
+func (d *DynamicArray) GetAll() []interface{} {
+	return d.arr[ : d.len];
+}
+
+func (d *DynamicArray) Contains(object interface{}) bool {
+	return d.IndexOf(object) != -1;
 }
