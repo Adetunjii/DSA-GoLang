@@ -11,7 +11,7 @@ func main() {
 	dynamicArray.Add(4);
 	dynamicArray.Add(6);
 
-	fmt.Println(dynamicArray.RemoveAt(2));
+	fmt.Println(dynamicArray.Get(2));
 	fmt.Println(dynamicArray.Contains(3))
 
 
