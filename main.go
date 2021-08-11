@@ -1,9 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	var t []int
-	fmt.Print(t)
-	
+
+	array := []int{10,-5,0,5,10}
+
+	sort.Ints(array)
+
+	fmt.Println(array)
 }
