@@ -1,4 +1,4 @@
-package Arrays
+package arrays
 
 import Exception "github.com/Adetunjii/data_structures/Exceptions"
 
@@ -14,8 +14,6 @@ var defaultCapacity uint = 16
 func (d *DynamicArray) Size() uint {
 	return d.len
 }
-
-
 
 func (d *DynamicArray) Get(index uint) (interface{}, error) {
 
@@ -57,7 +55,6 @@ func (d *DynamicArray) Add(element interface{}) {
 	d.arr[d.len] = element;  
 	d.len++
 }
-
 
 func (d *DynamicArray) RemoveAt(index uint) (interface{}, error) {
 	if(index >= d.len) {
