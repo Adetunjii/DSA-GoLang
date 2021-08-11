@@ -1,27 +1,12 @@
-package main
-
-import "fmt"
+package dsaquestions
 
 const HOME_TEAM_WON = 1
 const AWAY_TEAM_WON = 0
 
-func main() {
 
-	competitions := [][]string{
-		{"HTML", "C#"},
-		{"C#", "Python"},
-		{"Python", "HTML"},
-	}
+//Optimal Solution O(N) Time, O(K) Space Time
 
-	results := []int{0,0,1}
-
-	TournamentWinner(competitions, results)
-}
-
-
-
-func TournamentWinner(competitions [][]string, results []int){
-
+func TournamentWinner(competitions [][]string, results []int) string{
 	teamTable := make(map[string]int, len(results))
 	currentHighestValue := 0
 	var currentHighestKey string
@@ -46,6 +31,5 @@ func TournamentWinner(competitions [][]string, results []int){
 		}
 	}
 
-	fmt.Println(currentHighestKey)
-
-	}
+	return currentHighestKey
+}
