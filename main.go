@@ -1,51 +1,68 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"sort"
+)
 
 const HOME_TEAM_WON = 1
 const AWAY_TEAM_WON = 0
 
 func main() {
 
-	competitions := [][]string{
-		{"HTML", "C#"},
-		{"C#", "Python"},
-		{"Python", "HTML"},
-	}
+	fmt.Print(math.MinInt32)
 
-	results := []int{0,0,1}
-
-	TournamentWinner(competitions, results)
 }
 
 
 
-func TournamentWinner(competitions [][]string, results []int){
+func ThreeNumberSum(array []int, targetSum int){
 
-	teamTable := make(map[string]int, len(results))
-	currentHighestValue := 0
-	var currentHighestKey string
+	sort.Ints(array)
+	
+	startIndex := 0
+	currentOutputIndex := 0
+	outputArray := make([][]int, 3)
 
 
-	for index := range competitions{
-		if results[index] == HOME_TEAM_WON {
-			winningTeam := competitions[index][0]
-			teamTable[winningTeam] += 3
+	for idx := len(array) - 1; idx > startIndex; idx-- {
+
+		if currentOutputIndex == 3 {
+			break;
 		}
-		if results[index] == AWAY_TEAM_WON {
-			winningTeam := competitions[index][1]
-			teamTable[winningTeam] += 3
+
+		currentSum := array[startIndex] + array[idx]
+		lastNumber := targetSum - currentSum
+		lastNumberIndex := isExists(array[startIndex : idx], lastNumber)
+
+		foundArray := []int{}
+
+		if(lastNumberIndex != -1) {	
+			foundArray = []int{array[startIndex], array[idx], array[lastNumberIndex]}
+		}
+		sort.Ints(foundArray)
+		outputArray[currentOutputIndex] =  foundArray
+
+
+		if(len(foundArray) == 3) {
+			currentOutputIndex += 1
+			continue;
 		} 
+
+		fmt.Println("startIndex", startIndex)
+		fmt.Println("currentIndex", idx)
+		
 	}
 
+	fmt.Println(outputArray)
+}
 
-	for key, value := range teamTable {
-		if value > currentHighestValue {
-			currentHighestValue = value
-			currentHighestKey = key
+func isExists(array []int, number int) int {
+	for index := 0; index < len(array); index++ {
+		if(array[index] == number) {
+			return index;
 		}
 	}
-
-	fmt.Println(currentHighestKey)
-
-	}
+	return -1
+}
