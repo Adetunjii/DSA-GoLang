@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func SmalletDifference(array1, array2 []int) []int {
+func SmallestDifference(array1, array2 []int) []int {
 
 	sort.Ints(array1)
 	sort.Ints(array2)
@@ -17,7 +17,7 @@ func SmalletDifference(array1, array2 []int) []int {
 	for idx1 < len(array1) && idx2 < len(array2) {
 		left := array1[idx1]
 		right := array2[idx2]
-		
+
 		if left < right {
 			current = right - left
 			idx1 += 1
