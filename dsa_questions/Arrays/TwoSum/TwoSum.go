@@ -17,17 +17,32 @@ func TwoSum(array []int, target int)[]int {
 	// return []int{}
 
 	//Optimal Solution O(N) time, O(N) space
-	hashMap := make(map[int]int)
-	
-	for _, value := range array{
-		key := target - value
-		_, ok := hashMap[key];
-		if ok && key != value {
-			return []int{key, value}
+	//hashMap := make(map[int]int)
+	//
+	//for _, value := range array{
+	//	key := target - value
+	//	_, ok := hashMap[key];
+	//	if ok && key != value {
+	//		return []int{key, value}
+	//	} else {
+	//		hashMap[value] = key
+	//	}
+	//}
+	//
+	//return []int{}
+
+
+	startIdx := 0
+	endIdx := len(array) -1
+
+	for startIdx < endIdx {
+		if array[startIdx] + array[endIdx] == target {
+			return []int{startIdx, endIdx}
+		} else if array[startIdx] + array[endIdx] < target {
+			startIdx++
 		} else {
-			hashMap[value] = key
+			endIdx--
 		}
 	}
-
 	return []int{}
 }

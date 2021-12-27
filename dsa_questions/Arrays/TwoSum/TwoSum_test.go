@@ -7,10 +7,10 @@ import (
 )
 
 func TestTwoSum(t *testing.T) {
-	array := []int{3,5,-4,8,11,1,-1,6}
-	target := 10
+	array := []int{2,7,11,15}
+	target := 9
 
-	expected := []int{11,-1}
+	expected := []int{0,1}
 	output := TwoSum(array, target)
 	require.Equal(t, expected, output) 
 }
