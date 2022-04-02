@@ -1,6 +1,8 @@
 package dsaquestions
 
-func TwoSum(array []int, target int)[]int {
+import "fmt"
+
+func TwoSum(array []int, target int) []int {
 
 	//O(N²) Time, O(1) Space Time
 	// for i := 0; i < len(array); i++ {
@@ -31,18 +33,37 @@ func TwoSum(array []int, target int)[]int {
 	//
 	//return []int{}
 
+	// startIdx := 0
+	// endIdx := len(array) - 1
 
-	startIdx := 0
-	endIdx := len(array) -1
+	// for startIdx < endIdx {
+	// 	if array[startIdx]+array[endIdx] == target {
+	// 		return []int{startIdx, endIdx}
+	// 	} else if array[startIdx]+array[endIdx] < target {
+	// 		startIdx++
+	// 	} else {
+	// 		endIdx--
+	// 	}
+	// }
+	// return []int{}
 
-	for startIdx < endIdx {
-		if array[startIdx] + array[endIdx] == target {
-			return []int{startIdx, endIdx}
-		} else if array[startIdx] + array[endIdx] < target {
-			startIdx++
+	empty := make([]int, 0)
+	hashmap := make(map[int]int)
+
+	for currentValue := range array {
+		key := target - currentValue
+
+		_, ok := hashmap[key]
+
+		if ok && key != currentValue {
+			return []int{key, currentValue}
 		} else {
-			endIdx--
+			hashmap[currentValue] = key
+			fmt.Println(hashmap)
 		}
+
 	}
-	return []int{}
+
+	return empty
+
 }
