@@ -1,10 +1,13 @@
 package main
 
 import (
-	"github.com/Adetunjii/data_structures/dsa_questions/Arrays"
+	"fmt"
 )
 
 func main() {
+	array := []int{1, 2, 3, 4, 5}
 
-	Arrays.Array()
+	for _, arr := range array {
+		fmt.Println(arr)
+	}
 }
