@@ -5,7 +5,7 @@ func IsValidSubsequence(array []int, sequence []int) bool {
 
 	for _, value := range array {
 		if seqIndex == len(sequence) {
-			break;
+			break
 		}
 		if value == sequence[seqIndex] {
 			seqIndex += 1

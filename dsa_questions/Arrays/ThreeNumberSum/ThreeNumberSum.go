@@ -7,7 +7,7 @@ func ThreeNumberSum(array []int, targetSum int) [][]int {
 	sort.Ints(array)
 	output := make([][]int, 0)
 
-	for index := 0; index < len(array) - 2; index++ {
+	for index := 0; index < len(array)-2; index++ {
 		left := index + 1
 		right := len(array) - 1
 

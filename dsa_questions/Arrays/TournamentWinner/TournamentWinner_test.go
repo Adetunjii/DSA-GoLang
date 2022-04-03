@@ -12,7 +12,7 @@ func TestTournamentWinner(t *testing.T) {
 		{"C#", "Python"},
 		{"Python", "HTML"},
 	}
-	results := []int{0,0,1}
+	results := []int{0, 0, 1}
 	expected := "Python"
 	output := TournamentWinner(competitions, results)
 	require.Equal(t, expected, output)

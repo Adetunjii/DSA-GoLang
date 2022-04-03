@@ -2,8 +2,12 @@ package dsaquestions
 
 //NAIVE APPROACH | O(2ⁿ) Time, O(n)Space Time
 func GetNthFib(n int) int {
-	if(n == 1) { return 0}
-	if(n == 2) {return 1}
+	if n == 1 {
+		return 0
+	}
+	if n == 2 {
+		return 1
+	}
 	return GetNthFib(n-1) + GetNthFib(n-2)
 }
 
@@ -32,7 +36,6 @@ func GetNthFib(n int) int {
 // 		lastTwo[0] = lastTwo[1]
 // 		lastTwo[1] = nextFib
 // 	}
-
 
 // 	return lastTwo[1]
 // }

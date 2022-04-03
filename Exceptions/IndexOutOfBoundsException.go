@@ -4,6 +4,6 @@ import (
 	"errors"
 )
 
-func IndexOutOfBoundsException() error{
+func IndexOutOfBoundsException() error {
 	return errors.New("index out of bounds")
 }

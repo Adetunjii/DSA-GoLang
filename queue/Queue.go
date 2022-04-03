@@ -8,33 +8,32 @@ import (
 
 type Queue struct{}
 
-var list LinkedList.DoublyLinkedList = LinkedList.DoublyLinkedList{};
+var list LinkedList.DoublyLinkedList = LinkedList.DoublyLinkedList{}
 
 func (qu *Queue) Size() uint {
-	return list.Size();
+	return list.Size()
 }
 
 func (qu *Queue) isEmpty() bool {
-	return qu.Size() == 0;
+	return qu.Size() == 0
 }
 
 func (qu *Queue) Peek() interface{} {
 
-	if(qu.isEmpty()) {
+	if qu.isEmpty() {
 		panic(errors.New("queue empty"))
 	}
 
-	return list.PeekFirst();
+	return list.PeekFirst()
 }
 
 func (qu *Queue) enqueue(element interface{}) {
-	list.AddLast(element);
+	list.AddLast(element)
 }
 
-func (qu *Queue) dequeue(element interface{}) interface {} {
+func (qu *Queue) dequeue(element interface{}) interface{} {
 	if qu.isEmpty() {
 		panic("queue empty")
 	}
 	return list.RemoveFirst()
 }
-

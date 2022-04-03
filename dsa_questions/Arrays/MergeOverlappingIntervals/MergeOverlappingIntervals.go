@@ -26,8 +26,8 @@ func MergeOverlappingIntervals(array [][]int) [][]int {
 }
 
 func max(a, b int) int {
-	if a > b{
+	if a > b {
 		return a
- 	}
-	 return b
+	}
+	return b
 }

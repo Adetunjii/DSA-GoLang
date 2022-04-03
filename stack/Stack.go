@@ -16,33 +16,33 @@ func (st *Stack) Size() uint {
 }
 
 func (st *Stack) isEmpty() bool {
-	return st.Size() == 0 ;
+	return st.Size() == 0
 }
 
 func (st *Stack) Push(element interface{}) {
-	list.AddLast(element);
+	list.AddLast(element)
 }
 
 func (st *Stack) Pop() interface{} {
-	if(st.isEmpty()) {
-		 panic(errors.New("empty stack"))
+	if st.isEmpty() {
+		panic(errors.New("empty stack"))
 	}
 
 	return list.RemoveLast()
 }
 
 func (st *Stack) Peek() interface{} {
-	if(st.isEmpty()) {
+	if st.isEmpty() {
 		panic(errors.New("empty stack"))
 	}
 
-	return list.PeekLast();
+	return list.PeekLast()
 }
 
 func (st *Stack) Search(obj interface{}) int {
-	return list.IndexOf(obj);
+	return list.IndexOf(obj)
 }
 
 func (st *Stack) GetAllItems() {
-	list.GetAllItems();
+	list.GetAllItems()
 }

@@ -11,7 +11,6 @@ func SmallestDifference(array1, array2 []int) []int {
 	sort.Ints(array1)
 	sort.Ints(array2)
 
-
 	current := math.MaxInt32
 	result := []int{}
 

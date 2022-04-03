@@ -2,7 +2,6 @@ package dsaquestions
 
 func SortedSquaredArray(array []int) []int {
 
-
 	//Naive Solution O(NLOGN) Time, O(1) Space Time
 
 	// for i, value := range array {
@@ -28,14 +27,14 @@ func SortedSquaredArray(array []int) []int {
 			sortedArray[index] = array[endIndex] * array[endIndex]
 			endIndex--
 		}
-	} 
+	}
 
 	return sortedArray
 }
 
 func abs(a int) int {
-	if a < 0{
-		return -a // -(-ve value) 
+	if a < 0 {
+		return -a // -(-ve value)
 	}
 	return a
 }
