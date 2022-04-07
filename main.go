@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	println("hello world")
 
 	node := &LinkedList.Node{
 		Value: 1,
