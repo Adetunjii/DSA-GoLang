@@ -8,14 +8,17 @@ import (
 // Brute Force Approach O(N)
 func MinimumWindowSubString(searchString, t string) string {
 
+	sl := len(t)
 	minimumWindow := ""
 	currentWindowLength := math.MaxInt32
 
 	for i := 0; i < len(searchString); i++ {
 		for j := i; j < len(searchString); j++ {
 
-			currentWindow := subString(searchString, i, j+1)
+			currentWindow := subString(searchString, i, sl)
 			windowLength := len(currentWindow)
+
+			fmt.Println("current window", currentWindow)
 
 			matchFound := compareSubstringToCurrentWindow(currentWindow, t)
 
@@ -39,6 +42,7 @@ func compareSubstringToCurrentWindow(currentWindow, subString string) bool {
 		hashMap[subStringChars[i]] += 1
 	}
 	fmt.Println(hashMap)
+
 	for i := 0; i < len(currentWindowChars); i++ {
 		if value, ok := hashMap[currentWindowChars[i]]; ok {
 
@@ -49,7 +53,6 @@ func compareSubstringToCurrentWindow(currentWindow, subString string) bool {
 			}
 		}
 	}
-
 	fmt.Println(hashMap)
 	return len(hashMap) == 0
 }
