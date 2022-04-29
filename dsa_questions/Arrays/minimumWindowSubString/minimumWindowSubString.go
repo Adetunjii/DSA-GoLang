@@ -18,8 +18,6 @@ func MinimumWindowSubString(searchString, t string) string {
 			currentWindow := subString(searchString, i, sl)
 			windowLength := len(currentWindow)
 
-			fmt.Println("current window", currentWindow)
-
 			matchFound := compareSubstringToCurrentWindow(currentWindow, t)
 
 			if matchFound && windowLength < currentWindowLength {
@@ -53,7 +51,6 @@ func compareSubstringToCurrentWindow(currentWindow, subString string) bool {
 			}
 		}
 	}
-	fmt.Println(hashMap)
 	return len(hashMap) == 0
 }
 
