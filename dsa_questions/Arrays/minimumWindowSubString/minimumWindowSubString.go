@@ -1,33 +1,60 @@
 package minimumWindowSubString
 
 import (
-	"fmt"
 	"math"
 )
 
-// Brute Force Approach O(N)
+// Brute Force Approach O(N ^ 2)
+//func MinimumWindowSubString(searchString, t string) string {
+//
+//	sl := len(t)
+//	minimumWindow := ""
+//	currentWindowLength := math.MaxInt32
+//
+//	for i := 0; i < len(searchString); i++ {
+//		for j := i; j < len(searchString); j++ {
+//
+//			currentWindow := subString(searchString, i, sl)
+//			windowLength := len(currentWindow)
+//
+//			matchFound := compareSubstringToCurrentWindow(currentWindow, t)
+//
+//			if matchFound && windowLength < currentWindowLength {
+//				currentWindowLength = windowLength
+//				minimumWindow = currentWindow
+//			}
+//		}
+//	}
+//
+//	return minimumWindow
+//}
+
+// Optimal Approach
 func MinimumWindowSubString(searchString, t string) string {
 
-	sl := len(t)
-	minimumWindow := ""
-	currentWindowLength := math.MaxInt32
+	minWindowLength := math.MaxInt32
+	left := 0
+	right := 0
+	strLen := len(searchString)
+	minWindow := ""
 
-	for i := 0; i < len(searchString); i++ {
-		for j := i; j < len(searchString); j++ {
+	for right < strLen {
+		currentWindow := subString(searchString, left, right-left+1)
+		currentWindowLength := len(currentWindow)
 
-			currentWindow := subString(searchString, i, sl)
-			windowLength := len(currentWindow)
+		if compareSubstringToCurrentWindow(currentWindow, t) {
 
-			matchFound := compareSubstringToCurrentWindow(currentWindow, t)
-
-			if matchFound && windowLength < currentWindowLength {
-				currentWindowLength = windowLength
-				minimumWindow = currentWindow
+			if currentWindowLength < minWindowLength {
+				minWindowLength = currentWindowLength
+				minWindow = currentWindow
 			}
+			left += 1
+		} else {
+			right += 1
 		}
 	}
 
-	return minimumWindow
+	return minWindow
 }
 
 func compareSubstringToCurrentWindow(currentWindow, subString string) bool {
@@ -39,7 +66,6 @@ func compareSubstringToCurrentWindow(currentWindow, subString string) bool {
 	for i := 0; i < len(subStringChars); i++ {
 		hashMap[subStringChars[i]] += 1
 	}
-	fmt.Println(hashMap)
 
 	for i := 0; i < len(currentWindowChars); i++ {
 		if value, ok := hashMap[currentWindowChars[i]]; ok {
