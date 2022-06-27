@@ -1,4 +1,4 @@
-package FindNumberOfOccurrences
+package findNumberOfOccurrences
 
 func FindNumberOfOccurrences(a, b []int) int {
 

@@ -1,7 +1,7 @@
 package dsaquestions
 
 // Brute Force Solution O(N ^ 2) Time and O(1) Space Time
-// func FindDuplicateValue(array []int) int {
+// func findDuplicateValue(array []int) int {
 // 	minDuplicateIndex := 7
 // 	for i := 0; i < len(array); i++ {
 // 		for j := i + 1; j < len(array); j++ {
@@ -21,7 +21,7 @@ package dsaquestions
 // 	return a
 // }
 
-// func FindDuplicateValue(array []int) int {
+// func findDuplicateValue(array []int) int {
 // 	counts := make(map[int]int, len(array));
 // 	for i := 0; i < len(array); i++ {
 // 		 if counts[array[i]] + 1 == 2 {

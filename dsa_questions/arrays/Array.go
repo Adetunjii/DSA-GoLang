@@ -1,4 +1,4 @@
-package Arrays
+package arrays
 
 func ReverseArray(array []int) []int {
 	// split the array into two

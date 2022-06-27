@@ -1,9 +1,4 @@
-package LinkedList
-
-type LinkedList struct {
-	Value int
-	Next  *LinkedList
-}
+package linkedList
 
 func RemoveDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
 	currentNode := linkedList

@@ -2,37 +2,37 @@
 //
 //import (
 //	"fmt"
-//	"github.com/Adetunjii/data_structures/dsa_questions/LinkedList"
+//	"github.com/Adetunjii/data_structures/dsa_questions/linkedList"
 //)
 //
 //func main() {
 //	println("hello world")
 //
-//	node := &LinkedList.Node{
+//	node := &linkedList.Node{
 //		Value: 1,
 //		Prev: nil,
 //		Next: nil,
 //	}
 //
-//	newnode := &LinkedList.Node{
+//	newnode := &linkedList.Node{
 //		Value: 0,
 //		Prev: node,
 //		Next: nil,
 //	}
 //
-//	lastnode := &LinkedList.Node{
+//	lastnode := &linkedList.Node{
 //		Value: 5,
 //		Prev: node,
 //		Next: nil,
 //	}
-//	positionNode := &LinkedList.Node {
+//	positionNode := &linkedList.Node {
 //		Value: 9,
 //		Prev: newnode,
 //		Next: lastnode,
 //	}
 //
 //
-//	linkedlist := LinkedList.NewDoublyLinkedList()
+//	linkedlist := linkedList.NewDoublyLinkedList()
 //	linkedlist.SetHead(node)
 //	linkedlist.InsertBefore(node, newnode)
 //	linkedlist.InsertAfter(linkedlist.Tail, lastnode)

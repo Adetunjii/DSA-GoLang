@@ -1,5 +1,4 @@
-package LinkedList
-
+package linkedList
 
 import "fmt"
 
@@ -45,10 +44,8 @@ func (ll *DoublyLinkedList) InsertBefore(node, nodeToInsert *Node) {
 	}
 	ll.Remove(nodeToInsert)
 
-
 	nodeToInsert.Prev = node.Prev
 	nodeToInsert.Next = node
-
 
 	if node.Prev == nil {
 		ll.Head = nodeToInsert
@@ -78,7 +75,7 @@ func (ll *DoublyLinkedList) InsertAfter(node, nodeToInsert *Node) {
 
 func (ll *DoublyLinkedList) InsertAtPosition(position int, nodeToInsert *Node) {
 
-	if position == 1{
+	if position == 1 {
 		ll.SetHead(nodeToInsert)
 	}
 
