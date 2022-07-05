@@ -1,4 +1,4 @@
-package PascalsTriangle
+package pascalsTriangle
 
 import (
 	"github.com/stretchr/testify/require"

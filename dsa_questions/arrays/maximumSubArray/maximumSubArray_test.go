@@ -1,4 +1,4 @@
-package MaximumSubArray
+package maximumSubArray
 
 import (
 	"github.com/stretchr/testify/require"

@@ -33,4 +33,4 @@ func TestRemoveKthNode(t *testing.T) {
 	expected.printNodes()
 	output.printNodes()
 	require.Equal(t, expected, output)
-}k
+}

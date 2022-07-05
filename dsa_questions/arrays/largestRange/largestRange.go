@@ -5,7 +5,7 @@ package largestrange
 // )
 
 // ONLOGN - SubOptimal solution
-// func LargestRange(array []int) []int {k
+// func largestRange(array []int) []int {k
 // 	sort.Ints(array)
 // 	hashmap := make(map[int]int)
 // 	smallestIdx := 0

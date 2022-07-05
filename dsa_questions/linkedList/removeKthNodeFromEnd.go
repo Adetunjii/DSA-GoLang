@@ -1,11 +1,11 @@
 package linkedList
 
 func RemoveKthNode(head *LinkedList, k int) *LinkedList {
-	counter := 1
+	counter := 0
 	firstPtr := head
 	secondPtr := head
 
-	for counter <= k {
+	for counter < k {
 		secondPtr = secondPtr.Next
 		counter += 1
 	}

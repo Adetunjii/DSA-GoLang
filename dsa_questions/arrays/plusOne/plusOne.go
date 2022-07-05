@@ -1,4 +1,4 @@
-package PlusOne
+package plusOne
 
 func PlusOne(digits []int) []int {
 

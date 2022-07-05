@@ -1,4 +1,4 @@
-package PascalsTriangle
+package pascalsTriangle
 
 import (
 	"strconv"

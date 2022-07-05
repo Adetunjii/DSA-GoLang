@@ -1,11 +1,11 @@
-package MaximumSubArray
+package maximumSubArray
 
-// MaximumSubArray
+// maximumSubArray
 /* Suboptimal approach
  * Time Complexity O(N ^ 3), Space Complexity O(1)
  * Literally loop through the array and get the sum of each sub array
  */
-//func MaximumSubArray(array []int) int {
+//func maximumSubArray(array []int) int {
 //
 //	maxSum := math.MinInt32
 //
@@ -22,11 +22,11 @@ package MaximumSubArray
 //	return maxSum
 //}
 
-// MaximumSubArray
+// maximumSubArray
 /* Suboptimal approach
  * Time Complexity O(N ^ 2), Space Complexity O(1)
  */
-//func MaximumSubArray(array []int) int {
+//func maximumSubArray(array []int) int {
 //	maxSum := math.MinInt32
 //
 //	for i := 0; i < len(array)-1; i++ {

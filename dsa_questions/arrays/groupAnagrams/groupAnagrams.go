@@ -1,4 +1,4 @@
-package GroupAnagrams
+package groupAnagrams
 
 import "sort"
 
