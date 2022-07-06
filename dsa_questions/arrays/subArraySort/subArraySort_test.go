@@ -1,9 +1,8 @@
 package subarraysort
 
 import (
-	"testing"
-
 	"github.com/stretchr/testify/require"
+	"testing"
 )
 
 func TestSubArraySort(t *testing.T) {

@@ -1,4 +1,4 @@
-package ValidAnagram
+package validAnagram
 
 import (
 	"github.com/stretchr/testify/require"

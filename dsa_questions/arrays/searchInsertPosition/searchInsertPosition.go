@@ -1,4 +1,4 @@
-package SearchInsertPosition
+package searchInsertPosition
 
 func SearchInsertPosition(array []int, target int) int {
 

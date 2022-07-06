@@ -1,4 +1,4 @@
-package SearchInsertPosition
+package searchInsertPosition
 
 import (
 	"github.com/stretchr/testify/require"

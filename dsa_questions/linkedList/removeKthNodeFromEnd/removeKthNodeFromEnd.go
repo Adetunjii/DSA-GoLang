@@ -1,6 +1,8 @@
-package linkedList
+package removeKthNodeFromEnd
 
-func RemoveKthNode(head *LinkedList, k int) *LinkedList {
+import "github.com/Adetunjii/data_structures/dsa_questions/linkedList"
+
+func RemoveKthNode(head *linkedList.LinkedList, k int) *linkedList.LinkedList {
 	counter := 0
 	firstPtr := head
 	secondPtr := head

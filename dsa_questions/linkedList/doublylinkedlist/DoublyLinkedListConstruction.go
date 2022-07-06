@@ -1,4 +1,4 @@
-package linkedList
+package doublylinkedlist
 
 import "fmt"
 

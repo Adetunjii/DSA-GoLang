@@ -1,4 +1,4 @@
-package linkedList
+package removeDuplicates
 
 import "testing"
 

@@ -1,6 +1,8 @@
-package linkedList
+package removeDuplicates
 
-func RemoveDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
+import "github.com/Adetunjii/data_structures/dsa_questions/linkedList"
+
+func RemoveDuplicatesFromLinkedList(linkedList *linkedList.LinkedList) *linkedList.LinkedList {
 	currentNode := linkedList
 
 	for currentNode != nil {

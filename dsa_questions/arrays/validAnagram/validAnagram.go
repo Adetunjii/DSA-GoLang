@@ -1,4 +1,4 @@
-package ValidAnagram
+package validAnagram
 
 func ValidAnagram(s, t string) bool {
 	if len(s) != len(t) {
