@@ -1,4 +1,4 @@
-package Exceptions
+package exceptions
 
 import (
 	"errors"

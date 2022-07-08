@@ -1,6 +1,6 @@
 package arrays
 
-import Exception "github.com/Adetunjii/data_structures/Exceptions"
+import Exception "github.com/Adetunjii/data_structures/exceptions"
 
 type DynamicArray struct {
 	capacity uint

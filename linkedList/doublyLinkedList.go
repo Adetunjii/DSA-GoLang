@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/Adetunjii/data_structures/Exceptions"
+	"github.com/Adetunjii/data_structures/exceptions"
 )
 
 type Node struct {
@@ -126,7 +126,7 @@ func (dl *DoublyLinkedList) Remove(node *Node) interface{} {
 
 func (dl *DoublyLinkedList) RemoveAt(index uint) interface{} {
 	if index < 0 || index >= dl.size {
-		panic(Exceptions.IndexOutOfBoundsException())
+		panic(exceptions.IndexOutOfBoundsException())
 	}
 
 	var i uint
